@@ -5,36 +5,32 @@ Summary:        Console FB2 reader
 
 License:        GPLv2+
 URL:            https://github.com/matimatik/fbless
-Source0:        https://github.com/matimatik/%{name}/archive/%{version}.tar.gz
+Source0:        %{url}/archive/%{version}/%{name}-%{version}.tar.gz
 
+BuildRequires:  python2-devel
 BuildRequires:  python2-setuptools
-BuildRequires:  python2-rpm-macros
 Requires:       ncurses
 
 BuildArch:      noarch
 
 %description
-Simple console FB2 reader.
+%{summary}.
 
 %prep
 %autosetup
 
-
 %build
-#nothing to build
-
+%py2_build
 
 %install
-%{__python2} setup.py install --root=%{buildroot}
-
+%py2_install
 
 %files
 %license LICENSE
 %doc AUTHORS Changelog README TODO
 %{_bindir}/%{name}
-%{python2_sitelib}/%{name}-%version-py%{python2_version}.egg-info
-%{python2_sitelib}/%{name}_lib
-
+%{python2_sitelib}/%{name}-%version-py%{python2_version}.egg-info/
+%{python2_sitelib}/%{name}_lib/
 
 %changelog
 * Wed Jul 20 2016 Vasiliy N. Glazov <vascom2@gmail.com> 0.2.3-1
