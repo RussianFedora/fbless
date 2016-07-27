@@ -8,13 +8,12 @@ URL:            https://github.com/matimatik/fbless
 Source0:        %{url}/archive/%{version}/%{name}-%{version}.tar.gz
 
 BuildRequires:  python2-devel
-BuildRequires:  python2-setuptools
 Requires:       ncurses
 
 BuildArch:      noarch
 
 %description
-%{summary}.
+Curses based FictionBook2 viewer.
 
 %prep
 %autosetup
@@ -29,7 +28,7 @@ BuildArch:      noarch
 %license LICENSE
 %doc AUTHORS Changelog README TODO
 %{_bindir}/%{name}
-%{python2_sitelib}/%{name}-%version-py%{python2_version}.egg-info/
+%{python2_sitelib}/%{name}-%version-py%{python2_version}.egg-info
 %{python2_sitelib}/%{name}_lib/
 
 %changelog
