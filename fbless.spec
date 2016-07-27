@@ -28,7 +28,7 @@ Curses based FictionBook2 viewer.
 %license LICENSE
 %doc AUTHORS Changelog README TODO
 %{_bindir}/%{name}
-%{python2_sitelib}/%{name}-%version-py%{python2_version}.egg-info
+%{python2_sitelib}/%{name}-%{version}-py%{python2_version}.egg-info
 %{python2_sitelib}/%{name}_lib/
 
 %changelog
