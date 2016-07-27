@@ -5,7 +5,7 @@ Summary:        Console FB2 reader
 
 License:        GPLv2+
 URL:            https://github.com/matimatik/fbless
-Source0:        https://github.com/matimatik/fbless/archive/0.2.3.tar.gz
+Source0:        https://github.com/matimatik/%{name}/archive/%{version}.tar.gz
 
 BuildRequires:  python2-setuptools
 BuildRequires:  python2-rpm-macros
