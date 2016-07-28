@@ -17,17 +17,22 @@ Curses based FictionBook2 viewer.
 
 %prep
 %autosetup
+#https://github.com/matimatik/fbless/pull/29
+sed -ier "s|os.path.expanduser(\"~/.fblessrc\"),|'/etc/fblessrc',\n    os.path.expanduser(\"~/.fblessrc\"),|" fbless_lib/options.py
 
 %build
 %py2_build
 
 %install
 %py2_install
+mkdir %{buildroot}%{_sysconfdir}
+install -m 644 fblessrc.example %{buildroot}%{_sysconfdir}/fblessrc
 
 %files
 %license LICENSE
 %doc AUTHORS Changelog README TODO
 %{_bindir}/%{name}
+%config(noreplace) %{_sysconfdir}/fblessrc
 %{python2_sitelib}/%{name}-%{version}-py%{python2_version}.egg-info
 %{python2_sitelib}/%{name}_lib/
 
