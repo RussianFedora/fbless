@@ -1,6 +1,6 @@
 Name:           fbless
 Version:        0.2.3
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        Console FB2 reader
 
 License:        GPLv2+
@@ -41,5 +41,8 @@ gzip -c %{SOURCE1} > %{buildroot}%{_mandir}/man1/%{name}.1.gz
 %{python2_sitelib}/%{name}_lib/
 
 %changelog
+* Fri Jul 29 2016 Vasiliy N. Glazov <vascom2@gmail.com> 0.2.3-2
+- Add man file
+
 * Wed Jul 20 2016 Vasiliy N. Glazov <vascom2@gmail.com> 0.2.3-1
 - Initial packaging
